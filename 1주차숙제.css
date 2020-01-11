@@ -1,0 +1,10 @@
+* {
+	font-family: 'Stylish', sans-serif;
+}
+.wrap {
+	width: 500px;
+	margin: auto;
+}
+.span {
+	font-size: 2px;
+}
