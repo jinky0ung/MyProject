@@ -1,5 +1,7 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
 	
 	<!-- Webpage Title -->
@@ -20,8 +22,54 @@
 	<!-- 구글폰트 -->
 	<link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
 
+	<!-- script -->
+	<script> 
+		function isCellPhone(p) {
+			var regExp = /^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})[-][0-9]{3,4}[-][0-9]{4}$/;
+			return regExp.test(p);
+		}
+
+		function order() {
+			let name = $('#order_name').val();
+			let quantity = $('#order_quantity').val();
+			let address = $('#order_address').val();
+			let phone = $('#order_phone').val();
+			if(name == ''){
+				alert('이름은 꼭 입력하셔야 합니다')
+				$('#order_name').focus()
+				return
+			} else if(quantity==''){
+				alert('수량을 선택해주세요')
+				$('#order_quantity').focus()
+				return
+			} else if(address==''){
+				alert('주소를 입력해주세요')
+				$('#order_address').focus()
+				return
+			} else if(phone==''){
+				alert('휴대폰번호를 입력해주세요')
+				$('#order_phone').focus()
+				return
+			} else if (!isCellPhone(phone)) {
+				alert('휴대폰번호 입력 형식이 틀립니다. \n 010-0000-0000으로 입력해주세요.')
+				return
+			}
+		}
+	</script>
+
 	<!-- style -->
-	<link rel = "stylesheet" type = "text/css" href = "1주차숙제.css">
+	<style type='text/css'>
+		* {
+			font-family: 'Stylish', sans-serif;
+		}
+		.wrap {
+			width: 500px;
+			margin: auto;
+		}
+		h2, h5 {
+			display: inline;
+		}
+	</style>
 
 </head>
 
@@ -31,7 +79,8 @@
 		<img src="https://bit.ly/3a1EB2v" class="img-fluid" alt="Responsive image">
 
 		<div class="img body">
-			<h2 class="img-title"> 마라탕, 마라샹궈 <span class="img-title-small"> 가격: 12,900원/개 </span> </h2>
+			<h2> 마라탕, 마라샹궈 </h2>
+			<h5> 가격: 12,900원/개 </h5>''
 			<h4 class="img-subtitle mb-2 text-muted">우리집이 마라 맛집? 7분 마라탕!</h4>
 			<p class="img-text"><strong></strong></p>
 			<p class="img-text">냄비에 모두 부어 7분만에 뚝딱!</p>
@@ -39,17 +88,17 @@
 
 		<div class="input-group mb-3">
 			<div class="input-group-prepend">
-				<span class="input-group-text" id="inputGroup-sizing-default">주문자이름</span>
+				<span class="input-group-text" >주문자이름</span>
 			</div>
-			<input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+			<input type="text" class="form-control" id="order_name" aria-label="Default" aria-describedby="inputGroup-sizing-default">
 		</div>
 
 		<div class="input-group mb-3">
 			<div class="input-group-prepend">
 				<span class="input-group-text" id="inputGroup-sizing-default">수량</span>
 			</div>
-			<select class="custom-select" id="inputGroupSelect03">
-				<option selected>--수량을 선택하세요--</option>
+			<select class="custom-select" id="order_quantity">
+				<option selected value>--수량을 선택하세요--</option>
 				<option value="1">1</option>
 				<option value="2">2</option>
 				<option value="3">3</option>
@@ -58,20 +107,24 @@
 
 		<div class="input-group mb-3">
 			<div class="input-group-prepend">
-				<span class="input-group-text" id="inputGroup-sizing-default">주소</span>
+				<span class="input-group-text" >주소</span>
 			</div>
-			<input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+			<input type="text" class="form-control" id="order_address" aria-label="Default" aria-describedby="inputGroup-sizing-default">
 		</div>
 
 		<div class="input-group mb-3">
 			<div class="input-group-prepend">
-				<span class="input-group-text" id="inputGroup-sizing-default">전화번호</span>
+				<span class="input-group-text" >전화번호</span>
 			</div>
-			<input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+			<input type="text" class="form-control" id="order_phone" aria-label="Default" aria-describedby="inputGroup-sizing-default">
 		</div>
 
-		<center> <a href="#" class="btn btn-primary">주문하기</a></center>
-		
+		<center>  
+			<button class="btn btn-primary" onclick="order()" type="button">주문하기</button>
+		</center> 
+
 	</div>
+
 </body>
+
 </html>
