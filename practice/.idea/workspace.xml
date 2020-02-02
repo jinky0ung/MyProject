@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c057e3d3-4ed9-4949-af26-0ca6b7a0d91c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/25.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../12.py" beforeDir="false" afterPath="$PROJECT_DIR$/../12.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/44.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/46.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/50.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/51.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/53.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/12.py" beforeDir="false" afterPath="$PROJECT_DIR$/12.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,8 +42,8 @@
       <recent name="C:\Users\Jiyoung Kim\Desktop\sparta\myproject" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.25">
-    <configuration name="12" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.58">
+    <configuration name="46" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="practice" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -53,7 +55,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/12.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/46.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -62,7 +64,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="18" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="50" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="practice" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -74,7 +76,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/18.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/50.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -83,7 +85,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="21" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="51" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="practice" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -95,7 +97,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/21.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/51.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -104,7 +106,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="22" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="53" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="practice" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -116,7 +118,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/22.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/53.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -125,7 +127,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="25" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="58" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="practice" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -137,7 +139,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/25.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/58.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -148,11 +150,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.25" />
-        <item itemvalue="Python.22" />
-        <item itemvalue="Python.21" />
-        <item itemvalue="Python.12" />
-        <item itemvalue="Python.18" />
+        <item itemvalue="Python.58" />
+        <item itemvalue="Python.53" />
+        <item itemvalue="Python.51" />
+        <item itemvalue="Python.50" />
+        <item itemvalue="Python.46" />
       </list>
     </recent_temporary>
   </component>
@@ -182,22 +184,22 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="346" y="136" key="FileChooserDialogImpl/0.0.1368.872@0.0.1368.872" timestamp="1580643871129" />
-    <state width="1342" height="202" key="GridCell.Tab.0.bottom" timestamp="1580646454312">
+    <state width="1342" height="202" key="GridCell.Tab.0.bottom" timestamp="1580649488888">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1342" height="202" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1580646454312" />
-    <state width="1342" height="202" key="GridCell.Tab.0.center" timestamp="1580646454311">
+    <state width="1342" height="202" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1580649488888" />
+    <state width="1342" height="202" key="GridCell.Tab.0.center" timestamp="1580649488887">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1342" height="202" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1580646454311" />
-    <state width="1342" height="202" key="GridCell.Tab.0.left" timestamp="1580646454311">
+    <state width="1342" height="202" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1580649488887" />
+    <state width="1342" height="202" key="GridCell.Tab.0.left" timestamp="1580649488887">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1342" height="202" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1580646454311" />
-    <state width="1342" height="202" key="GridCell.Tab.0.right" timestamp="1580646454311">
+    <state width="1342" height="202" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1580649488887" />
+    <state width="1342" height="202" key="GridCell.Tab.0.right" timestamp="1580649488888">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1342" height="202" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1580646454311" />
+    <state width="1342" height="202" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1580649488888" />
     <state x="0" y="0" key="SettingsEditor" timestamp="1580641419802">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
