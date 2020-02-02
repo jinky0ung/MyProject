@@ -26,8 +26,14 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="settings.editor.selected.configurable" value="settings.github" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Jiyoung Kim\Desktop\sparta\myproject" />
+      <recent name="C:\Users\Jiyoung Kim\Desktop\sparta\myproject\practice" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="prac" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -75,10 +81,10 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="177" y="12" key="#Notifications/0.0.1368.872@0.0.1368.872" timestamp="1580640273552" />
-    <state x="346" y="136" key="FileChooserDialogImpl" timestamp="1580641211068">
+    <state x="346" y="136" key="FileChooserDialogImpl" timestamp="1580642188660">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="346" y="136" key="FileChooserDialogImpl/0.0.1368.872@0.0.1368.872" timestamp="1580641211068" />
+    <state x="346" y="136" key="FileChooserDialogImpl/0.0.1368.872@0.0.1368.872" timestamp="1580642188660" />
     <state width="1342" height="202" key="GridCell.Tab.0.bottom" timestamp="1580641486474">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
