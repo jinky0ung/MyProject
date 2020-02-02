@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	
+	<!-- Webpage Title -->
+	<title>★루팡!|마라탕,마라샹궈</title>
+
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<!-- JS -->   
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	<!-- 구글폰트 -->
+	<link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
+
+	<!-- script -->
+	<script> 
+		function isCellPhone(p) {
+			var regExp = /^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})[-][0-9]{3,4}[-][0-9]{4}$/;
+			return regExp.test(p);
+		}
+
+		function order() {
+			let name = $('#order_name').val();
+			let quantity = $('#order_quantity').val();
+			let address = $('#order_address').val();
+			let phone = $('#order_phone').val();
+			if(name == ''){
+				alert('이름은 꼭 입력하셔야 합니다')
+				$('#order_name').focus()
+				return
+			} else if(quantity==''){
+				alert('수량을 선택해주세요')
+				$('#order_quantity').focus()
+				return
+			} else if(address==''){
+				alert('주소를 입력해주세요')
+				$('#order_address').focus()
+				return
+			} else if(phone==''){
+				alert('휴대폰번호를 입력해주세요')
+				$('#order_phone').focus()
+				return
+			} else if (!isCellPhone(phone)) {
+				alert('휴대폰번호 입력 형식이 틀립니다. \n 010-0000-0000으로 입력해주세요.')
+				return
+			} else {
+				alert('주문완료!')
+			}
+		}
+
+		$(document).ready(function(){
+			listing();
+		});
+
+		function listing() {
+			$.ajax({
+				type: "GET",
+				url: "http://spartacodingclub.shop/order",
+				data: {},
+				success: function(response){
+					let orders = response['orders'];
+					$('#tb-body').empty();
+					for(i=0; i<orders.length; i++){
+						let name = orders[i]['name'];
+						let count = orders[i]['count'];
+						let add = orders[i]['address'];
+						let phone = orders[i]['phone'];
+						let temp_html = 
+						'<tr>\
+						<th scope="row">'+name+'</th>\
+						<td>'+count+'</td>\
+						<td>'+add+'</td>\
+						<td>'+phone+'</td>\
+						</tr>'
+						$('#tb-body').append(temp_html);
+					}
+				}
+			})
+		}
+
+
+	</script>
+
+	<!-- style -->
+	<style type='text/css'>
+		* {
+			font-family: 'Stylish', sans-serif;
+		}
+		.wrap {
+			width: 500px;
+			margin: auto;
+		}
+		h2, h5 {
+			display: inline;
+		}
+	</style>
+
+
+</head>
+
+<body>
+	<div class="wrap">
+
+		<img src="https://bit.ly/3a1EB2v" class="img-fluid" alt="Responsive image">
+
+		<div class="img body">
+			<h2> 마라탕, 마라샹궈 </h2>
+			<h5> 가격: 12,900원/개 </h5>''
+			<h4 class="img-subtitle mb-2 text-muted">우리집이 마라 맛집? 7분 마라탕!</h4>
+			<p class="img-text"><strong></strong></p>
+			<p class="img-text">냄비에 모두 부어 7분만에 뚝딱!</p>
+		</div>			
+
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<span class="input-group-text" >주문자이름</span>
+			</div>
+			<input type="text" class="form-control" id="order_name" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+		</div>
+
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<span class="input-group-text" id="inputGroup-sizing-default">수량</span>
+			</div>
+			<select class="custom-select" id="order_quantity">
+				<option selected value>--수량을 선택하세요--</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+			</select>
+		</div>
+
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<span class="input-group-text" >주소</span>
+			</div>
+			<input type="text" class="form-control" id="order_address" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+		</div>
+
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<span class="input-group-text" >전화번호</span>
+			</div>
+			<input type="text" class="form-control" id="order_phone" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+		</div>
+
+		<center>  
+			<button class="btn btn-primary" onclick="order()" type="button">주문하기</button>
+		</center> 
+
+		<div>
+			<table class="table table-bordered" id="table">
+				<thead>
+					<tr>
+						<th scope="col">이름</th>
+						<th scope="col">수량</th>
+						<th scope="col">주소</th>
+						<th scope="col">전화번호</th>
+					</tr>
+				</thead>
+				<tbody id="tb-body">
+					<tr>
+						<th scope="row">이름</th>
+						<td>수량</td>
+						<td>주소</td>
+						<td>전화번호</td>
+					</tr>    
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+</body>
+
+</html>
