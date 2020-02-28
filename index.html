@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <!-- Webpage Title -->
+  <title>My Book Review</title>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <!-- 구글폰트 -->
+  <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
+
+  <script>
+    // 브라우저가 최초로 html을 그릴 때, 카드를 만들도록 하는 코드
+
+    function posting() {
+      let isbn = $('#posting-isbn').val();
+      let startdate = $('#posting-startdate').val();
+      let enddate = $('#posting-enddate').val();
+      let star = $('#posting-star').val();
+      let channel = $('#posting-channel').val();
+      let shreview = $('#posting-shreview').val();
+      let lgreview = $('#posting-lgreview').val();
+      
+      // ajax python의 requests처럼 url 호출할 때 사용 (GET, POST 둘 다 가능)
+      $.ajax({
+        type: "POST", // POST 방식으로 요청하겠다.
+        url: "/post", // /post라는 url에 요청하겠다.
+        data: { isbn_give: isbn, 
+          startdate_give: startdate, 
+          enddate_give: enddate, 
+          star_give: star, 
+          channel_give: channel,
+          shreview_give: shreview, 
+            lgreview_give: lgreview }, // 데이터를 주는 방법 Dictionary
+       success: function(response){ // 성공하면
+        if (response['result'] == 'success') {
+          alert('포스팅 성공!');
+            // 카드를 만들어준다.
+            listing();
+            // 브라우저를 새로 고침한다.
+            window.location.reload();
+          } else {
+            alert('서버 오류!')
+          }
+        }
+      })
+    }
+    function make_card(bookimage, title, author, translator, publisher, datetime, star, startdate, enddate, channel, shreview, lgreview) {
+      let temp_html = '<div class="card">\
+      <img class="card-img-top" src="' + bookimage + '" alt="Card image cap">\
+      <div class="card-body">\
+      <p class="card-title">' + '책제목: ' + title + '</p>\
+      <p class="card-text author">' + '저자: ' + author + '</p>\
+      <p class="card-text translator">' + '역자: ' + translator + '</p>\
+      <p class="card-text publisher">' + '출판사: ' + publisher + '</p>\
+      <p class="card-text datetime">' + '발행일: ' + datetime + '</p>\
+      <p class="card-text star">' + '나의평점: ' + star + '</p>\
+      <p class="card-text startdate">' + '시작일: ' + startdate + '</p>\
+      <p class="card-text enddate">' + '종료일: ' + enddate + '</p>\
+      <p class="card-text channel">' + '추천경로: ' + channel + '</p>\
+      <p class="card-text shreview">' + '한줄리뷰: ' + shreview + '</p>\
+      <p class="card-text lgreview">' + '리뷰: ' + lgreview + '</p>\
+      </div>\
+      </div>';
+      $('#cards-box').append(temp_html);
+    }
+
+    $(document).ready(function(){
+      listing();
+    });
+    
+    function listing() {
+      $.ajax({
+        type: "GET",
+        url: "/post",
+        data: {},
+        success: function(response){
+           // 전체 카드를 만드는 역할
+           let bookinfos = response['bookinfos'];
+           for (let i = 0; i < bookinfos.length; i++) {
+             // 한장 한장 카드를 만드는 역할
+             make_card(
+               bookinfos[i]['bookimage'],
+               bookinfos[i]['title'],
+               bookinfos[i]['author'],
+               bookinfos[i]['translator'],
+               bookinfos[i]['publisher'],
+               bookinfos[i]['datetime'],
+               bookinfos[i]['star'],
+               bookinfos[i]['startdate'],
+               bookinfos[i]['enddate'],
+               bookinfos[i]['channel'],
+               bookinfos[i]['shreview'],
+               bookinfos[i]['lgreview'],
+               )
+           }
+         }
+       })
+    }
+  </script>
+
+  <!-- style -->
+  <style type="text/css">
+    * {
+      font-family: 'Stylish', sans-serif;
+    }
+    .wrap {
+      width: 900px;
+      margin: auto;
+    }
+    .comment {
+      color: blue;
+      font-weight: bold;
+    }
+    .form-post {
+      max-width: 600px;
+      padding: 0.5rem;
+      margin: 0rem ;
+      border-color: #e9ecef;
+      border-radius: 0.3rem;
+      border: solid;
+      display: block;
+    }
+    
+
+  </style>
+
+</head>
+
+<body>
+  <div class="wrap">
+
+    <h1 class="display-4">My Book Review</h1>
+
+    <div class="form-post" id="posting-box">
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" >ISBN 번호</span>
+        </div>  
+        <input type="text" id="posting-isbn" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="구글에서 isbn 검색해보기">
+      </div>
+
+      <div class="input-group mb-3" >
+        <div class="input-group-prepend">
+          <span class="input-group-text" >시작일</span>
+        </div>  
+        <input type="text" id="posting-startdate" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="yyyy-mm-dd">
+      </div>
+
+      <div class="input-group mb-3" >
+        <div class="input-group-prepend">
+          <span class="input-group-text" >종료일</span>
+        </div>  
+        <input type="text" id="posting-enddate" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="yyyy-mm-dd">
+      </div>
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" >나만의 평점</span>
+        </div>
+        <select class="form-control" id="posting-star">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" >추천경로</span>
+        </div>  
+        <input type="text" id="posting-channel" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="이 책을 어떻게 알게 되었는지.">
+      </div>
+
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" >한줄리뷰</span>
+        </div>  
+        <input type="text" id="posting-shreview" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="">
+      </div>
+
+
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">리뷰작성</label>
+        <textarea id="posting-lgreview" class="form-control" rows="1"></textarea>
+      </div> 
+      <!-- </div> -->
+
+      <center>
+        <button class="btn btn-primary" onclick="posting()">리뷰저장</button>
+      </center>
+      <!-- </div> -->
+      <!-- </form> -->
+    </div>
+
+  </div>
+
+  <div class="card-columns"  id="cards-box">
+  </div>
+
+</body>
+</html>
