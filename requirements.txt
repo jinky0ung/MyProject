@@ -1,4 +1,4 @@
-requests==2.21.0
+requests==2.31.0
 pybaseball==1.0.4
 beautifulsoup4==4.6.0
 pymongo==3.10.1
